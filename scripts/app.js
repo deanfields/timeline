@@ -75,8 +75,9 @@ $(function () {
         t.add(TweenMax.to(dateStat, 0.1, { text: slides[i].getAttribute('data-date') } ), "0");
         t.add(TweenMax.to(launchedStat, 0.2, { text: slides[i].getAttribute('data-launched') } ), "0");
         t.add(TweenMax.to(usersStat, 0.2, { text: slides[i].getAttribute('data-users') } ), "0");
-        t.add(TweenMax.to($('.timeline-navigation__link'), 0.1, { className: "-=active" }), "0");
-        t.add(TweenMax.to($('.timeline-navigation .timeline-navigation__link')[i], 0.1, { className: "+=active" }), "0");
+        
+        t.add(TweenMax.to($('.timeline-navigation__link'), 0.01, { className: "-=active" }), "0");
+        t.add(TweenMax.to($('.timeline-navigation .timeline-navigation__link')[i], 0.01, { className: "+=active" }), "0");
 
         var offset = window.innerHeight - (window.innerHeight/2) - 155 + "px"
         
