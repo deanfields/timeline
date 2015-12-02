@@ -54,6 +54,27 @@ $(function () {
     }
   });
 
+        $(document).on("click", "a[href^=#]", function(e) {
+        e.preventDefault();
+        var $this = $(this),
+        href = $this.attr("href"),
+        topY = $(href).position().top;
+
+        if(topY > $(window).height()) {
+          topY = topY + 94
+        }
+
+        TweenMax.to(window, 1, {
+          scrollTo:{
+            y: topY, 
+            autoKill: false
+          }, 
+          ease:Power3.easeOut 
+        });
+
+        return false;
+      });
+
   // Enquire
   enquire.register("screen and (min-width:699px)", {
     match: function() {
@@ -157,7 +178,7 @@ $(function () {
       controller.destroy(true);
 
       $(document).on("click", "a[href^=#]", function(e) {
-        // e.preventDefault();
+        e.preventDefault();
         var $this = $(this),
         href = $this.attr("href"),
         topY = $(href).position().top;

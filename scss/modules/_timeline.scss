@@ -86,6 +86,7 @@
   -khtml-opacity: 0.15;
   /* Good browsers */
   opacity: 0.15;
+  
   z-index: 2;
   
   img {
@@ -98,6 +99,17 @@
     width: span(5);
     vertical-align: middle;
     text-align: right;
+   /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    /* IE 5-7 */
+    filter: alpha(opacity=100);
+    /* Netscape */
+    -moz-opacity: 1;
+    /* Safari 1.x */
+    -khtml-opacity: 1;
+    /* Good browsers */
+    opacity: 1;
+    position: static;
   }
 }
 
