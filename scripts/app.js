@@ -54,8 +54,8 @@ $(function () {
         t.add(TweenMax.to(launchedStat, 0.2, { text: slides[i].getAttribute('data-launched') } ), "0");
         t.add(TweenMax.to(usersStat, 0.2, { text: slides[i].getAttribute('data-users') } ), "0");
         
-        t.add(TweenMax.to($('.timeline-navigation__link'), 0.1, { className: "-=active" }), "0");
-        t.add(TweenMax.to($('.timeline-navigation .timeline-navigation__link')[i], 0.1, { className: "+=active" }), "0");
+        t.add(TweenMax.to($('.timeline-navigation__link'), 0.05, { className: "-=active" }), "0");
+        t.add(TweenMax.to($('.timeline-navigation .timeline-navigation__link')[i], 0.05, { className: "+=active" }), "0");
 
         var offset = window.innerHeight - (window.innerHeight/2) - 155 + "px"
         
@@ -119,29 +119,59 @@ $('body').keydown(function(e){
   }
 });
 
+var slides = $(".timeline__slide");
+
 function nextSlide() {
-  var slides = document.querySelectorAll(".timeline__slide");
-  var topY = $(slides[3]).position().top;
+
+  var current = $(".timeline-navigation__dots .active").index();
+
+  if(current < slides.length--) {
+
+    current = current + 1;
+    // console.log("next",current)
+
+  var topY = $("#slide-"+current).offset().top
+ // console.log("next",topY)
 
   TweenMax.to(window, 1, {
     scrollTo:{
-      y: topY, 
-      autoKill: false
+      y: topY,
+      autoKill: true
     }, 
     ease:Power3.easeOut 
   });
 }
+}
 
-$("#nextSlide").on("click", function(){
-   var slides = document.querySelectorAll(".timeline__slide");
-  var topY = $(slides[5]).position().top;
+function prevSlide() {
+
+  var current = $(".timeline-navigation__dots .active").index();
+
+  if(current > 0) {
+   
+  var topY = $("#slide-"+(current - 1)).offset().top
+
+  // console.log("prev", topY)
 
   TweenMax.to(window, 1, {
     scrollTo:{
-      y: topY, 
-      autoKill: false
+      y: topY,
+      autoKill: true
     }, 
     ease:Power3.easeOut 
   });
+}
+}
+
+
+$("#nextSlide").off().on("click", function(e){
+  e.preventDefault();
+  nextSlide();
+});
+
+
+$("#prevSlide").off().on("click", function(e){
+  e.preventDefault();
+  prevSlide();
 });
 
