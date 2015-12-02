@@ -54,15 +54,20 @@ $(function () {
     }
   });
 
-        $(document).on("click", "a[href^=#]", function(e) {
+    $(document).on("click", "a[href^=#]", function(e) {
         e.preventDefault();
         var $this = $(this),
         href = $this.attr("href"),
         topY = $(href).position().top;
 
+        console.log(topY);
+
         if(topY > $(window).height()) {
-          topY = topY + 94
+          // topY = topY + 94
         }
+
+        console.log(topY);
+        
 
         TweenMax.to(window, 1, {
           scrollTo:{
