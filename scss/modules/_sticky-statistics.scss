@@ -1,0 +1,49 @@
+.sticky-statistics {
+  display: none;
+  
+  
+  @include breakpoint($medium) {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    padding: 50px 0;
+    background: #000;
+    color: #fff;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  li {
+    float: left;
+    text-align: center;
+    width: 33.3%;
+    border-right: solid 1px #fff;
+    margin-bottom: 0;
+    
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+}
+
+.sticky-statistics__label {
+  font-size: 20px;
+  clear: both;
+  display: block;
+  font-weight: lighter;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.sticky-statistics__value {
+  font-size: 30px;
+  color: #FAEC20;
+  font-weight: normal;  
+  clear: both;
+  display: block;
+  font-weight: bold;
+}
+

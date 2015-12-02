@@ -1,0 +1,41 @@
+.timeline-navigation {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-bottom: 155px solid transparent;
+  z-index: 5;
+  display: none;
+
+  @include breakpoint($medium) {
+    display: block;
+  }
+  
+  a {
+    color: #000;
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+    outline: none;
+    
+    &:hover {
+      color: #ccc;
+    }
+
+    &.active {
+      color: #FC870D;
+    }
+  }
+}
+
+.timeline-navigation__date {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+#prevSlide,
+#nextSlide {
+  font-size: 1.5625em;
+  cursor: pointer;
+}

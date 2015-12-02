@@ -1,0 +1,51 @@
+
+
+html, body {
+  background: $background;
+  color: #444;
+  font-family: "proxima-nova";
+  
+  @include breakpoint($medium) {
+    height: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.wrapper {
+  height: 100%;
+  padding-top: 40px;
+  
+  @include breakpoint($medium) {
+    padding-top: 0;
+  }
+}
+
+.main-content {
+  height: 100%;
+}
+
+.container {
+  padding: 0 20px;
+  
+  @include breakpoint($medium) {
+    @include container(67.5em);
+    padding: 0 3.75em;
+  }
+}
+

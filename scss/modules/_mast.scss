@@ -1,0 +1,35 @@
+.mast {
+  background: #7F7F7F;
+  height: 40px; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  transition: transform 300ms ease;
+
+  @include breakpoint($medium) {
+    display: none;
+  }
+}
+
+.mast__heading {
+  font-size: 1.25em;
+  line-height: 40px;
+  color: #fff;
+}
+
+.mast__slideout-button {
+  float: right;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 30px;
+  line-height: 40px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.mast--menu-open {
+  transform: translate3d(-256px, 0px, 0px);
+}
