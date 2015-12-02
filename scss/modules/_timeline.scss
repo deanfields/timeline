@@ -57,6 +57,8 @@
 
 .timeline__slide-content {
   padding: 1.875em 0;
+
+  
   
   @include breakpoint($medium) {
     padding: 0;
@@ -70,6 +72,10 @@
 
 .timeline__slide-image {
   display: none;
+  // position: absolute;
+  // top: 30px;
+
+  // opacity: 0.1;
   
   img {
     display: block;
