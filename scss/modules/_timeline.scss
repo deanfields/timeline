@@ -71,11 +71,22 @@
 }
 
 .timeline__slide-image {
-  display: none;
-  // position: absolute;
-  // top: 30px;
-
-  // opacity: 0.1;
+  // display: none;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+ /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+  /* IE 5-7 */
+  filter: alpha(opacity=15);
+  /* Netscape */
+  -moz-opacity: 0.15;
+  /* Safari 1.x */
+  -khtml-opacity: 0.15;
+  /* Good browsers */
+  opacity: 0.15;
+  z-index: 2;
   
   img {
     display: block;

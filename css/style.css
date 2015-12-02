@@ -177,7 +177,21 @@ strong {
       padding-right: 30px; } }
 
 .timeline__slide-image {
-  display: none; }
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+  /* IE 5-7 */
+  filter: alpha(opacity=15);
+  /* Netscape */
+  -moz-opacity: 0.15;
+  /* Safari 1.x */
+  -khtml-opacity: 0.15;
+  /* Good browsers */
+  opacity: 0.15;
+  z-index: 2; }
   .timeline__slide-image img {
     display: block;
     margin: 0 auto; }
