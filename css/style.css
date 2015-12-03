@@ -166,7 +166,8 @@ strong {
       transform: translateY(-50%); } }
 
 .timeline__slide-content {
-  padding: 1.875em 0; }
+  padding: 1.875em 0;
+  direction: ltr; }
   @media (min-width: 700px) {
     .timeline__slide-content {
       padding: 0;
